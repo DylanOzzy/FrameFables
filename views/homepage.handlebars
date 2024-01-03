@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frame Fables</title>
-</head>
-<body>
-    
-</body>
-</html>
+{{#each story as |story| }}
+<div id="story">
+    <div>
+        <h2>
+            <a href="/story/{{story.id}}">{{story.name}}</a>
+        </h2>
+    </div>
+
+    <div>
+        <p>
+            {{story.description}}
+        </p>
+    </div>
+</div>
+{{/each}}
