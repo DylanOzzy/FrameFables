@@ -1,4 +1,4 @@
-{{#each story as |story| }}
+{{#each stories as |story| }}
 <div id="story">
     <div>
         <h2>
@@ -6,7 +6,9 @@
         </h2>
     </div>
 
-    <div>
+    <!--need to add div here to link image relevant to the story-->
+
+    <div id="story-description">
         <p>
             {{story.description}}
         </p>

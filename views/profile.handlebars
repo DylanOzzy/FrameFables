@@ -1,11 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-</head>
-<body>
-    
-</body>
-</html>
+<div>
+    <h2>What's on your mind, {{name}}?</h2>
+</div>
+
+<div>
+
+    <div>
+        <h3>Write a Story:</h3>
+
+        <form class="new-story-form">
+            <div class="form-group">
+                <label for="story-name">Story Name:</label>
+                <input class="form-input" type="text" id="story-name" name="story-name" />
+            </div>
+        </form>
+    </div>
+
+    {{#if stories.length}}
+    <div>
+        <h3>Current Stories:</h3>
+
+        {{#each stories as |story|}}
+        <div>
+            <div>
+                <h4><a href="/story/{{story.id}}">{{story.name}}</a></h4>
+            </div>
+            <div>
+                <button class="delete-button" data-id="{{story.id}}">Delete</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+</div>
+
+<script src="./js/profile.js"></script>
