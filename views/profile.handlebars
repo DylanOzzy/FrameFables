@@ -7,18 +7,18 @@
     <div>
         <h3>Write a Story:</h3>
 
-        <form class="new-story-form">
+        <form class="form new-story-form">
             <div class="form-group">
                 <label for="story-name">Title:</label>
                 <input class="form-input" type="text" id="story-name" name="story-name" />
-                <label for="story-name">Write Your Story:</label>
-                <input class="form-input" type="text" id="story-name" name="story-name" />
+                <label for="story-text">Write Your Story:</label>
+                <input class="form-input" type="text" id="story-text" name="story-text" />
             </div>
         </form>
     </div>
 
     {{#if stories.length}}
-    <div>
+    <div class="story-list">
         <h3>Current Stories:</h3>
 
         {{#each stories as |story|}}
