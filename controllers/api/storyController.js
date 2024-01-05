@@ -1,8 +1,9 @@
 const { Story } = require('../models');
 const router = require('express').Router();
+const auth = require('../../utils/auth');
 
 // create a new story
-router.post('/create', async (req, res) => {
+router.post('/create', auth, async (req, res) => {
     try {
         const newStory = await Story.create({ ...req.body, userId: req.session.user.id });
         res.status(201).json(newStory);
@@ -25,7 +26,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // updates a story by id
-router.put('/update/:id', async (req, res) => {
+router.put('/update/:id', auth, async (req, res) => {
     try {
         const updated = await Story.update(req.body, { where: { id: req.params.id } });
         if (updated[0] === 0) {
@@ -38,7 +39,7 @@ router.put('/update/:id', async (req, res) => {
 });
 
 // delete a story by id
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id', auth, async (req, res) => {
     try {
         const deleted = await Story.destroy({ where: { id: req.params.id } });
         if (deleted === 0) {
