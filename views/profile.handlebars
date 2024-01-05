@@ -1,5 +1,5 @@
 <div>
-    <h2>What's on your mind, {{name}}?</h2>
+    <h2>What's on your mind, {{user.name}}?</h2>
 </div>
 
 <div>
@@ -9,7 +9,9 @@
 
         <form class="new-story-form">
             <div class="form-group">
-                <label for="story-name">Story Name:</label>
+                <label for="story-name">Title:</label>
+                <input class="form-input" type="text" id="story-name" name="story-name" />
+                <label for="story-name">Write Your Story:</label>
                 <input class="form-input" type="text" id="story-name" name="story-name" />
             </div>
         </form>
