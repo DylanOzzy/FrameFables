@@ -22,7 +22,7 @@
         {{#each stories as |story|}}
         <div>
             <div>
-                <h4><a href="/story/{{story.id}}">{{story.name}}</a></h4>
+                <h4><a href="/story/{{story.id}}"><!--{{story.name}}--></a></h4>
             </div>
             <div>
                 <button class="delete-button" data-id="{{story.id}}">Delete</button>
@@ -34,4 +34,4 @@
 
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="/public/js/profile.js"></script>
