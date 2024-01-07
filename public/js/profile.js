@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
     const description = document.querySelector('#story-text').value.trim();
   
     if (title && content) {
-      const response = await fetch(`/api/story`, {
+      const response = await fetch(`/api/stories`, {
         method: 'POST',
         body: JSON.stringify({ title, content }),
         headers: {
@@ -44,3 +44,5 @@ const newFormHandler = async (event) => {
   document
     .querySelector('.story-list')
     .addEventListener('click', delButtonHandler);
+
+  //links match
