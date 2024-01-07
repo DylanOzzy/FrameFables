@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Story } = require('../../models');
-const withAuth = require('../../utils/auth');
+const isAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', isAuth, async (req, res) => {
   try {
     const newStory = await Story.create({
       ...req.body,
@@ -15,7 +15,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', isAuth, async (req, res) => {
   try {
     const storyData = await Story.destroy({
       where: {
