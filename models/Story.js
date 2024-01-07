@@ -36,12 +36,14 @@ Story.init(
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'story',
   }
 );
+
+module.exports = Story;
 
 /*Story.belongsTo(User, {
   foreignKey: 'user_id',
@@ -51,4 +53,3 @@ Story.belongsTo(Image, {
   foreignKey: 'image_id',
 });*/
 
-module.exports = Story;
