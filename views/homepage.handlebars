@@ -1,16 +1,27 @@
+<h4>Welcome to 'FrameFables' — where writers explore, stories unfold. Pick an image, spark inspiration, and craft tales with fellow wordsmiths. Fuel your creativity, connect, and let FrameFables be your blank canvas for storytelling. Unleash your narratives, one captivating image at a time!
+            </h4>
+            <h3>Muse of the Week:</h3>
+            <img src="/images/backgroundphoto.jpg">
+            <h4>Now create your story using the above image as inspiration (and be sure to log in first). If this is your first time visiting the site, be sure to sign in!</h4>
 {{#each stories as |story| }}
 <div id="story">
     <div>
         <h2>
-            <a href="/story/{{story.id}}">{{story.name}}</a>
+            <a href="/story/{{story.id}}">{{story.title}}</a>
         </h2>
+        <h3></h3>
     </div>
 
     <!--need to add div here to link image relevant to the story-->
 
+    <div id ="created-by">
+        <p>
+            Imagined by {{story.user.name}}
+        </p>
+    </div>
     <div id="story-description">
         <p>
-            {{story.description}}
+            {{story.content}}
         </p>
     </div>
 </div>
