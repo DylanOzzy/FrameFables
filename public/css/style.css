@@ -1,3 +1,7 @@
 header {
-    background-color: brown;
+    background: linear-gradient(#606c38, #fefae0); 
+    
+}
+link {
+    color: #faf4d3
 }
