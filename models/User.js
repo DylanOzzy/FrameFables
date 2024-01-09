@@ -56,9 +56,4 @@ User.init(
   }
 );
 
-User.hasMany(Story, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
-
 module.exports = User;

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Story = require('./Story'); 
 
 class Image extends Model {}
 
@@ -24,10 +25,5 @@ Image.init(
     modelName: 'image',
   }
 );
-
-Image.hasMany(Story, {
-    foreignKey: 'image_id',
-    onDelete: 'CASCADE', // if images is deleted, all story posts will be deleted as well.
-  });
 
 module.exports = Image;
