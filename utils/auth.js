@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+/*const bcrypt = require('bcrypt');
 
 function isAuth(req, res, next) {
     if (req.session && req.session.user) {
@@ -19,6 +19,15 @@ async function login(req, username, password) {
 
 function logout(req) {
     req.session.destroy();
-}
+}*/
 
-module.exports = { isAuth, login, logout };
+const isAuth = (req, res, next) => {
+    // If the user is not logged in, redirect the request to the login route
+    if (!req.session.logged_in) {
+      res.redirect('/login');
+    } else {
+      next();
+    }
+};
+
+module.exports = isAuth;
