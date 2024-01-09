@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+const User = require('./User');
 class Story extends Model {}
 
 Story.init(
@@ -10,6 +10,10 @@ Story.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     content: {
       type: DataTypes.TEXT,

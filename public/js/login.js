@@ -16,10 +16,8 @@ const loginFormHandler = async (event) => {
         } else {
           alert('Failed to log in');
         }
-      }
-    };
-    
-    document
-      .querySelector('.login-form')
-      .addEventListener('submit', loginFormHandler);
-    
+      };
+      
+      document
+        .querySelector('.login-form')
+        .addEventListener('submit', loginFormHandler);
