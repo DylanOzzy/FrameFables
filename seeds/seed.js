@@ -1,8 +1,32 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models/User');
-const { Story } = require('../models/Story');
-const { Image } = require('../models/Image');
-const associations = require('../db/associations');
+const { User, Story } = require('../models');
+
+const userData = require('./userData.json');
+const storyData = require('./storyData.json');
+
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
+
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  for (const story of storyData) {
+    await Story.create({
+      ...story,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  process.exit(0);
+};
+
+seedDatabase();
+
+
+/*const sequelize = require('../config/connection');
+const { User, Story, Image } = require('../models');
 
 const userData = require('./userData.json');
 const storyData = require('./storyData.json');
@@ -34,4 +58,4 @@ const seedDatabase = async () => {
   process.exit(0);
 };
 
-seedDatabase();
+seedDatabase();*/
