@@ -42,7 +42,7 @@ Story.init(
     modelName: 'story',
   }
 );
-
+/*
 Story.belongsTo(User, {
   foreignKey: 'user_id',
 });
