@@ -25,4 +25,9 @@ Image.init(
   }
 );
 
+Image.hasMany(Story, {
+    foreignKey: 'image_id',
+    onDelete: 'CASCADE', // if images is deleted, all story posts will be deleted as well.
+  });
+
 module.exports = Image;
