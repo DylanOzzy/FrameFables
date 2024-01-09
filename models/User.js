@@ -55,9 +55,10 @@ User.init(
   }
 );
 
-User.hasMany(Story, {
+module.exports = User;
+
+/*User.hasMany(Story, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
-});
-console.log('User', User);
-module.exports = { User };
+});*/
+

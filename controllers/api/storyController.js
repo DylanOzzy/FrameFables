@@ -1,4 +1,4 @@
-const { Story } = require('../models');
+const { Story } = require('../../models');
 const router = require('express').Router();
 const auth = require('../../utils/auth');
 
