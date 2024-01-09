@@ -2,6 +2,18 @@ const router = require('express').Router();
 const { Story } = require('../../models');
 const isAuth = require('../../utils/auth');
 
+
+
+router.get('/stories', isAuth, async (req, res) => {
+  const userStories = await Story.findAll({
+    where: {
+      userId: req.session.user_id
+    }
+  });
+  res.render('stories', { stories: userStories });
+});
+
+
 router.post('/', isAuth, async (req, res) => {
   try {
     const newStory = await Story.create({
