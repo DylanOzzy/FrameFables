@@ -1,3 +1,29 @@
-header {
-    background-color: brown;
+html{
+    background-color: #606c38;
+    text-align: center;
 }
+
+header {
+    background-image: linear-gradient(to right, #283618 , #fefae0 );
+}
+#link{
+    color: #fefae0;
+}
+
+a:link {
+    text-decoration: none;
+    color: #fefae0;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color:#fefae0
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
