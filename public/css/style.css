@@ -1,7 +1,29 @@
+html{
+    background-color: #283618;
+    text-align: center;
+}
 header {
-    background: linear-gradient(to right,#606c38, #fefae0); 
+    background: linear-gradient(to right,#606c38, #fefae0);
+    text-align: center;
     
 }
-link {
-    color: #faf4d3
-}
+
+a:link {
+    text-decoration: none;
+    color: #faf4d3;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: #faf4d3;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: #faf4d3;
+  }
+  
+  a:active {
+    text-decoration: none;
+    color: #faf4d3;
+  }
