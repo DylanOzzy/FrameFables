@@ -1,8 +1,8 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#story-name').value.trim();
-    const description = document.querySelector('#story-text').value.trim();
+    const title = document.querySelector('#story-name').value.trim();
+    const content = document.querySelector('#story-text').value.trim();
   
     if (title && content) {
       const response = await fetch(`/api/stories`, {
@@ -14,7 +14,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/story');
+        document.location.replace('/profile');
       } else {
         alert('Failed to write story');
       }
@@ -30,19 +30,19 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/story');
+        document.location.replace('/profile');
       } else {
         alert('Failed to erase story');
       }
     }
-  };
+};
   
-  document
-    .querySelector('new-story-form')
+document
+    .querySelector('.new-story-form')
     .addEventListener('submit', newFormHandler);
   
-  document
-    .querySelector('story-list')
+document
+    .querySelector('.story-list')
     .addEventListener('click', delButtonHandler);
 
   //links match
