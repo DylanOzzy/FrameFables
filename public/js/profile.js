@@ -38,11 +38,11 @@ const newFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.new-story-form')
+    .querySelector('new-story-form')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.story-list')
+    .querySelector('story-list')
     .addEventListener('click', delButtonHandler);
 
   //links match
