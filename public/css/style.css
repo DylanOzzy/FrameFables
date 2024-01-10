@@ -8,10 +8,12 @@ header {
     background-image: linear-gradient(to right, #283618 , #fefae0 );
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-radius: 20px;
-}
-
-#link{
-    color: #fefae0;
+    border-style: solid; 
+    border-width: thick; 
+    border-color: #283618;
+    box-shadow: 10px 10px #535d30;
+    margin: 10px 15px 10px 15px;
+    padding: 15px 0px 0px 0px;
 }
 
 a:link {
