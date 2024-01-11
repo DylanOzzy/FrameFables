@@ -6,7 +6,7 @@ Welcome to FrameFables—where writers explore, stories unfold. Spark inspiratio
 
 ## Table of Contents
 - [Installation](#installation)
-- [Tests](#tests)
+- [Technologies](#technologies)
 - [Collaborators](#collaborators)
 
 ## Installation
@@ -15,8 +15,8 @@ Welcome to FrameFables—where writers explore, stories unfold. Spark inspiratio
 
 ![framefables](https://github.com/adriang1004/README-gen/assets/144719329/624f9ea3-625f-4f9a-b3a7-891e83cb03d5)
 
-## Tests
-Run 'npm test' from the project root directory to execute the test suite.
+## Technologies
+Technologies used include Nodes.js, Express.js, Handlebars.js, Sequelize, MySQL, Session, date-fns, and bcrypt.
 
 ## Collaborators
 *   [Dylan Ozzy](https://github.com/DylanOzzy)
