@@ -1,7 +1,27 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = ['backgroundphoto.jpg', 'photo2.jpg', 'photo3.jpg']; 
+        let currentDate = new Date();
+        const museImage = document.getElementById('muse-image');
+        const nextWeekButton = document.getElementById('next-week-image');
+
+        nextWeekButton.addEventListener('click', () => {
+            currentDate.setDate(currentDate.getDate() + 7); // adds 7 days
+            const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
+            const pastDaysOfYear = (currentDate - startOfYear) / 86400000;
+            const weekNumber = Math.ceil((pastDaysOfYear + startOfYear.getDay() + 1) / 7);
+            const imageIndex = weekNumber % images.length;
+            museImage.src = `/images/${images[imageIndex]}`;
+        });
+    });
+</script>
 <h4 style="background-color: #fefae0; border-style: solid; border-width: thick; border-color: #283618; margin: 25px 50px 25px 50px; padding: 18px; font-size: 22px;">Welcome to 'FrameFables' — where writers explore, stories unfold. Pick an image, spark inspiration, and craft tales with fellow wordsmiths. Fuel your creativity, connect, and let FrameFables be your blank canvas for storytelling. Unleash your narratives, one captivating image at a time!
             </h4>
             <h3 style="background-image: linear-gradient(to right, #283618 , #fefae0 ); color: #fefae0; border-style: solid; border-width: thick; border-color: #283618; font-size: 40px; background-color:#283618; border-radius: 20px;margin: 10px 15px 10px 15px; padding: 15px; box-shadow: 10px 10px #535d30;">Muse of the Week:</h3>
-            <img src="/images/{{museImage}}" alt="Muse of the Week" class="muse-image">
+            <div style="text-align: center; margin-top: 15px; margin-bottom: 15px;"> 
+            <button id="next-week-image" style="background-color:#283618; color:#fefae0; padding: 10px 20px; font-size: 16px; cursor: pointer;">Next Week's Image</button>
+            </div>
+            <img id="muse-image" src="/images/{{museImage}}" alt="Muse of the Week" class="muse-image">
             <h4 style="background-color: #fefae0; border-style: solid; border-width: thick; border-color: #283618; margin: 10px 30px 10px 30px; padding: 18px; font-size: 18px;">Now create your story using the above image as inspiration (and be sure to log in first). If this is your first time visiting the site, be sure to sign in!</h4>
 {{#each stories as |story| }}
 <div id="story">
