@@ -1,6 +1,14 @@
 const router = require('express').Router();
 const { Story, User } = require('../models');
 const isAuth = require('../utils/auth');
+const { getWeek } = require('date-fns');
+
+function getMuseImage() {
+  const images = ['backgroundphoto.jpg', 'photo2.jpg', 'photo3.jpg'];
+  const currentWeek = getWeek(new Date());
+  const imageIndex = currentWeek % images.length; 
+  return images[imageIndex];
+};
 
 router.get('/', async (req, res) => {
   try {
@@ -16,9 +24,11 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const stories = storyData.map((story) => story.get({ plain: true }));
+    const museImage = getMuseImage();
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
+      museImage,
       stories, 
       logged_in: req.session.logged_in 
     });
